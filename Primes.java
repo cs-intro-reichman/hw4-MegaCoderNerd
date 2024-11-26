@@ -21,6 +21,7 @@ public class Primes {
 
         // Print all prime numbers
         int count = 0;
+        System.out.println("Prime numbers up to " + lastN + ":");
         for (int i = 2; i <= lastN; i++) {
             if (arr[i] == true) {
                 System.out.println(i);
