@@ -124,17 +124,17 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         // we return null if indices are incorrect
-        if (beginIndex <= -1 || beginIndex >= arr.length || beginIndex > endIndex) {
+        if (beginIndex <= -1 || beginIndex > arr.length || beginIndex > endIndex) {
             return null;
-        }else if (endIndex <= -1 || endIndex >= arr.length) {
+        }else if (endIndex <= -1 || endIndex > arr.length) {
             return null;
         }
-        // as the indices begin from 0 and can be equal we want the length
-        // to be a minimum of 1 and thus we always add 1 to the result
-        char[] subArr = new char[endIndex-beginIndex+1];
+        // aas the endIndex can be the length itself we'll just retain it unless both are equal
+        // which then will make no subArr
+        char[] subArr = new char[endIndex-beginIndex];
 
         // we want to iterate from beginning to end included
-        for (int i = beginIndex; i <= endIndex; i++) {
+        for (int i = beginIndex; i < endIndex; i++) {
             subArr[i-beginIndex] = arr[i];
         }
         return subArr;
