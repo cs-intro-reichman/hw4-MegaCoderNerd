@@ -3,6 +3,7 @@
 public class ArrCharOps {
     public static void main(String[] args) {
         String str = "clearly";
+        char[] arr = "Somebody stop me".toCharArray();
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
         System.out.println(str);  // Prints the string
@@ -12,7 +13,7 @@ public class ArrCharOps {
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
+        System.out.println(subArray(arr, 0, 8));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -122,11 +123,11 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        // we throw exceptions if the indices are not within bounds
+        // we return null if indices are incorrect
         if (beginIndex <= -1 || beginIndex >= arr.length || beginIndex > endIndex) {
-            throw new ArrayIndexOutOfBoundsException();
+            return null;
         }else if (endIndex <= -1 || endIndex >= arr.length) {
-            throw new ArrayIndexOutOfBoundsException();
+            return null;
         }
         // as the indices begin from 0 and can be equal we want the length
         // to be a minimum of 1 and thus we always add 1 to the result
