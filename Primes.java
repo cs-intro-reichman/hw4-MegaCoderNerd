@@ -27,7 +27,6 @@ public class Primes {
                 count++;
             }
         }
-        System.out.println();
         System.out.println("There are " + count + " primes between 2 and " + lastN + " (" + count*100/lastN + "% are primes)");
     }
 }
