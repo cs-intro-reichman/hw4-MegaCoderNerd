@@ -1,6 +1,6 @@
 public class Primes {
     public static void main(String[] args) {
-        int lastN = 10; // Integer.parseInt(args[0]);
+        int lastN = Integer.parseInt(args[0]);
         boolean[] arr = new boolean[lastN + 1];
         
         // Initialize all entries as true. A value in arr[i] will 
