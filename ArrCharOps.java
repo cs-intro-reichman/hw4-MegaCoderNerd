@@ -134,7 +134,7 @@ public class ArrCharOps {
 
         // we want to iterate from beginning to end included
         for (int i = beginIndex; i <= endIndex; i++) {
-            subArr[i] = arr[i];
+            subArr[i-beginIndex] = arr[i];
         }
         return subArr;
     }
@@ -151,7 +151,7 @@ public class ArrCharOps {
         // we just return 0 if arr is empty
         if (arr.length == 0) return hashC;
         // we iterate over the array
-        for (int i = 0; i <= arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             // the formula to get the hashCode 
             hashC += arr[i]*Math.pow(7, arr.length-i-1);
         }
@@ -221,7 +221,7 @@ public class ArrCharOps {
             if (curr1 < curr2) return -1;
             else if(curr1 > curr2) return 1;
         }
-        
+
         return 0;
     }
 }
