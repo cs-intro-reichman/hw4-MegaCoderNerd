@@ -20,11 +20,13 @@ public class Primes {
         }
 
         // Print all prime numbers
+        int count = 0;
         for (int i = 2; i <= lastN; i++) {
             if (arr[i] == true) {
                 System.out.print(i + " ");
+                count++;
             }
         }
-        System.out.println();
+        System.out.println("There are " + count + " primes between 2 and " + lastN + " (" + count*100/lastN + "% are primes)");
     }
 }
